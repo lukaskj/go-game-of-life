@@ -30,3 +30,5 @@ go run gameOfLife.go 500 20 10
 ```
 go run gameOfLife.go 500 20 10 65984445125
 ```
+
+> Drawing in console isn't the best but this is just for practice Go
