@@ -108,7 +108,7 @@ func main() {
          fmt.Printf("\n")
       }
 
-      time.Sleep(50 * time.Millisecond)
+      time.Sleep(75 * time.Millisecond)
       CallClear()
    }
 }
