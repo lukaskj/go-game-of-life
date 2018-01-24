@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
     "fmt"
     "os"
     "os/exec"
@@ -98,17 +99,25 @@ func main() {
    
    g := gof.GameOfLife{}
    g.Init(cols, rows, nGen, int64(seed))
-   g.GenerateAll()
+	g.GenerateAll()
+	
+	writer := bufio.NewWriter(os.Stdout)
    
    for _, gen := range g.Generations {
       for i := range gen {
          for j := range gen[i] {
-            fmt.Printf("%d ", gen[i][j])
+				if(gen[i][j] > 0) {
+					writer.WriteString("■")
+				} else {
+					writer.WriteByte(' ')
+				}
+				writer.WriteByte(' ')
          }
-         fmt.Printf("\n")
+			writer.WriteByte('\n')
       }
 
-      time.Sleep(75 * time.Millisecond)
+		writer.Flush()
+		time.Sleep(75 * time.Millisecond)
       CallClear()
    }
 }
