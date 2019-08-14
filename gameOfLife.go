@@ -10,8 +10,6 @@ import (
     "time"
 )
 
-import gof "./GameOfLife"
-
 /*
  * From: https://stackoverflow.com/questions/22891644/how-can-i-clear-the-terminal-screen-in-go
  */
@@ -97,7 +95,7 @@ func main() {
    var s string
    fmt.Scanf("%s", &s)
    
-   g := gof.GameOfLife{}
+   g := GameOfLife{}
    g.Init(cols, rows, nGen, int64(seed))
 	g.GenerateAll()
 	

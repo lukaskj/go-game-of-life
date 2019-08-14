@@ -1,4 +1,4 @@
-package GameOfLife
+package main
 
 import (
    "time"
